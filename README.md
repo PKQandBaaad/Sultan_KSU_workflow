@@ -4,7 +4,7 @@
 
 **【内核名称】**
 
-    通用名称：通用内核映像
+    通用名称：苏丹内核映像
     英语名称：Sultan Kernel Image
     汉语拼音：سلطان Neihe Yingxiang
 

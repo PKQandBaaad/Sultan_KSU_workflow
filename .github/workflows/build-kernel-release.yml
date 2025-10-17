@@ -69,7 +69,8 @@ jobs:
             ak3_suffix: "_SUKISU"
             # kpm: "https://raw.githubusercontent.com/ShirkNeko/SukiSU_patch/refs/heads/main/kpm/patch_linux"
 
-        susfs: [false, true]
+        # susfs: [false, true]
+        susfs: [true]
         exclude:
           - build:
               ksu: false

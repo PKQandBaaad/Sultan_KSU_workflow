@@ -155,7 +155,7 @@ jobs:
           if [[ -n "${{ matrix.build.ksu_patches }}" ]]; then
             cd "${{ matrix.build.folder }}"
             for patch_name in ${{ matrix.build.ksu_patches }}; do
-              patch -p1 < "${{ env.ok_dir }}/${patch_name}"
+              patch -p1 < "${patch_name}"
             done
             cd "${{ env.kernel_dir }}"
           fi
@@ -175,7 +175,7 @@ jobs:
 
           if [[ -n "${{ matrix.build.susfs_patch }}" ]]; then
             cd "${{ env.kernel_dir }}/${{ matrix.build.folder }}"
-            patch -p1 --forward < ${{ env.ok_dir }}/${{ matrix.build.susfs_patch }}
+            patch -p1 --forward < ${{ matrix.build.susfs_patch }}
           fi
 
           cd "${{ env.kernel_dir }}"

@@ -330,13 +330,15 @@ jobs:
           cat << EOF > release_body.md
           ⚠️ **COMPATIBILITY NOTICE** ⚠️
           Please ensure compatibility by comparing release dates with official Sultan kernel releases:
-          - Check official Sultan releases: https://github.com/kerneltoast/android_kernel_google_gs201/releases
+          - Check official Sultan releases: https://github.com/kerneltoast/android_kernel_google_zuma/
           - This build is based on the latest Sultan kernel commits as of build date
           - Always verify your device's Android version matches the kernel target (Android 14)
           - Recommended to use kernels released within 30 days of official Sultan updates
 
           Features:
-            See code.
+            - SukiSU Ultra v${{ env.SUKI_V }} [Commit](${{ env.SUKI_URL }})
+            - ඞ SUSFS 
+            - [baseband_guard.c](https://github.com/vc-teahouse/Baseband-guard/blob/main/baseband_guard.c) added (**Do not restore your phone to factory defaults after installing this patch.**)
           EOF
 
       - name: Set release tag

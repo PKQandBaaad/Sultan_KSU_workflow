@@ -149,11 +149,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cd "$CONFIG"
+          cd "${{ env.kernel_dir }}"
           echo "Adding BBG..."
           wget -O- https://github.com/vc-teahouse/Baseband-guard/raw/main/setup.sh | bash
           echo "CONFIG_BBG=y" >> "${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}"
-          sed -i '/^config LSM$/,/^help$/{ /^[[:space:]]*default/ { /baseband_guard/! s/lockdown/lockdown,baseband_guard/ } }' security/Kconfig
+          sed -i '/^config LSM$/,/^help$/{ /^[[:space:]]*default/ { /baseband_guard/! s/lockdown/lockdown,baseband_guard/ } }' ${{ env.kernel_dir }}/security/Kconfig
 
       - name: Add KernelSU (${{ matrix.build.type }})
         if: matrix.build.ksu

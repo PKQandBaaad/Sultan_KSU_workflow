@@ -62,7 +62,7 @@ jobs:
             repo: "SukiSU-Ultra/SukiSU-Ultra"
             folder: "KernelSU"
             branch: "susfs-main"
-            kernel_patches: "../suki_patches/hooks/syscall_hooks.patch"
+            kernel_patches: "hooks/syscall_hooks.patch"
             extra_configs: "CONFIG_KPM=y CONFIG_KSU_MANUAL_HOOK=y CONFIG_KSU_MANUAL_SU=n"
             susfs_patch: "../susfs/kernel_patches/50_add_susfs_in_gki-android14-6.1.patch"
             ak3_suffix: "_SUKISU"
@@ -121,7 +121,7 @@ jobs:
 
           if [[ -n "${{ matrix.build.kernel_patches }}" ]]; then
             for patch_name in ${{ matrix.build.kernel_patches }}; do
-              patch -p1 -F 3 < "${{ env.ok_dir }}/${patch_name}"
+              patch -p1 -F 3 < "${{ env.suki_dir }}/${patch_name}"
             done
           fi
 

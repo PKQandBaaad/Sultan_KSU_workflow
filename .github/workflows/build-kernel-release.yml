@@ -64,7 +64,7 @@ jobs:
             branch: "susfs-main"
             ksu_patches: "fix_list_count_nodes_indent.patch"
             kernel_patches: "hooks/syscall_hooks.patch"
-            extra_configs: "CONFIG_KSU_MANUAL_HOOK=y CONFIG_KSU_MANUAL_SU=n"
+            extra_configs: "CONFIG_KSU_MANUAL_HOOK=y CONFIG_KSU_MANUAL_SU=n CONFIG_COMPAT=y"
             # susfs_patch: "kernel_patches/50_add_susfs_in_gki-android14-6.1.patch"
             ak3_suffix: "_SUKISU"
             # kpm: "https://raw.githubusercontent.com/ShirkNeko/SukiSU_patch/refs/heads/main/kpm/patch_linux"

@@ -184,7 +184,7 @@ jobs:
 
           # Add SUSFS configuration settings
           echo "CONFIG_KSU_SUSFS=y"  >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}
-          echo "CONFIG_KSU_SUSFS_SUS_SU=n" >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }
+          echo "CONFIG_KSU_SUSFS_SUS_SU=n" >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}
           echo "CONFIG_KSU_SUSFS_HAS_MAGIC_MOUNT=y"  >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}
           echo "CONFIG_KSU_SUSFS_SUS_PATH=y"  >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}
           echo "CONFIG_KSU_SUSFS_SUS_MOUNT=y"  >> ${{ env.kernel_dir }}/arch/arm64/configs/${{ matrix.kernel.defconfig }}
